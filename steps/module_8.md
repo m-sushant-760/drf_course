@@ -225,44 +225,44 @@ Let's make some calls to our new endpoint.
 
 3) Call our endpoints - Here are the requests we can make to our new endpoints.
 
-> This retrieves the auth token for **your_username**
+> This retrieves the auth token for sushant
 
-curl -X POST -F 'username=**your_username**' -F 'password=**your_password**' http://api:8000/api-token-auth/
+curl -X POST -F 'username=sushant' -F 'password=admin' http://api:8000/api-token-auth/
 
-http post http://api:8000/api-token-auth/ username=**your_username** password=**your_password**
+http post http://api:8000/api-token-auth/ username=sushant password=admin
 
 
 > This will retrieve all items
 
-curl -X GET -H 'Authorization: Token **your_token**' http://api:8000/item/
+curl -X GET -H 'Authorization: Token dc870c7afc857d89d00e316f123fca56154a980b' http://api:8000/item/
 
-http http://api:8000/item/ 'Authorization: Token **your_token**'
+http http://api:8000/item/ 'Authorization: Token dc870c7afc857d89d00e316f123fca56154a980b'
 
 
 > This will retreive a single item
 
-curl -X GET -H 'Authorization: Token **your_token**' http://api:8000/item/**your_item_uuid**/
+curl -X GET -H 'Authorization: Token dc870c7afc857d89d00e316f123fca56154a980b' http://api:8000/item/5d536589-64a0-47c9-8c8c-cc35ec81d72d/
 
-http http://api:8000/item/**your_item_uuid**/ 'Authorization: Token **your_token**' 
+http http://api:8000/item/5d536589-64a0-47c9-8c8c-cc35ec81d72d/ 'Authorization: Token dc870c7afc857d89d00e316f123fca56154a980b' 
 
 > This retrieve all orders
 
-curl -X GET -H 'Authorization: Token **your_token**' http://api:8000/order/
+curl -X GET -H 'Authorization: Token dc870c7afc857d89d00e316f123fca56154a980b' http://api:8000/order/
 
-http http://api:8000/order/ 'Authorization: Token **your_token**'
+http http://api:8000/order/ 'Authorization: Token dc870c7afc857d89d00e316f123fca56154a980b'
 
-> This will place an order for item id = **your_item_uuid** quantity = 1
+> This will place an order for item id = 5d536589-64a0-47c9-8c8c-cc35ec81d72d quantity = 1
 
-curl -X POST -H 'Content-Type: application/json' -H 'Authorization: Token **your_token**' -d '{"item": "**your_item_uuid**", "quantity": "1"}' http://api:8000/order/
+curl -X POST -H 'Content-Type: application/json' -H 'Authorization: Token dc870c7afc857d89d00e316f123fca56154a980b' -d '{"item": "5d536589-64a0-47c9-8c8c-cc35ec81d72d", "quantity": "1"}' http://api:8000/order/
 
-http http://api:8000/order/ 'Authorization: Token **your_token**' item="**your_item_uuid**" quantity="1"
+http http://api:8000/order/ 'Authorization: Token dc870c7afc857d89d00e316f123fca56154a980b' item="5d536589-64a0-47c9-8c8c-cc35ec81d72d" quantity="1"
 
 
-> This get order id = **your_order_uuid**
+> This get order id = 41e4f70c-eedb-435f-a901-37265632a174
 
-curl -X GET -H 'Authorization: Token **your_token**' http://api:8000/order/**your_order_uuid**/
+curl -X GET -H 'Authorization: Token dc870c7afc857d89d00e316f123fca56154a980b' http://api:8000/order/41e4f70c-eedb-435f-a901-37265632a174/
 
-http http://api:8000/order/**your_order_uuid**/ 'Authorization: Token **your_token**'
+http http://api:8000/order/41e4f70c-eedb-435f-a901-37265632a174/ 'Authorization: Token dc870c7afc857d89d00e316f123fca56154a980b'
 
 > This will create a contact request
 
